@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection</title>
+</head>
+<body>
+    <h2>Fake News Prediction</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="news" rows="10" cols="60" placeholder="Enter news text"></textarea><br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h3>Prediction: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
